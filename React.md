@@ -127,4 +127,13 @@ return (
 ```
 
 10. Code smarter
-    Extract the logic into a custom hook
+    Build component with a bunch of different stateful value first then if things get too complex extract the logic into a custom hook a js function.
+
+    ```javascript
+    function useMetadata(){
+        const [title, setTitle] = useState("hey)
+        const [theme, setTheme] = useState("hey)
+        const [ts, setTs] = useState(Date.now())
+
+    }
+    ```
