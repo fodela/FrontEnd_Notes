@@ -86,3 +86,14 @@ funtion workHard(){
    ```
 
    NB: Use sparingly because it makes it impossible to resuse the component unless that provider is a parent
+
+8. Props Plowing (a made up term)
+
+```javascript
+//    instead of
+<Person age={data.age} name={data.name} sex={data.sex}/>
+//  use
+<Person {...data} />
+```
+
+Code is less explicit so do not overuse
