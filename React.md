@@ -4,7 +4,7 @@
 
 1. Write a big component and break them into components using the vscode extension 'glean'
 
-2. Nesting
+2. Nesting gotcha
    Instead of creating the child component into the parent, create a separate child component and pass the variables need to the child using props
 
 ```javascript
@@ -15,5 +15,18 @@ const Parent = ()=>{
             <Child onClick={functionName} age={15}>
         </div>
     )
+}
+```
+
+3. Failure to Memoize
+   We can use useMemo() Hookd to remember a value and call a function if and only if the value has changed.
+
+```javascript
+funtion workHard(){
+    const [count, setCount] = useState(0);
+    const [other, setOther] = usestate(0);
+
+    // const total = expensiveCalcutaion(count) --> in this the function will run again even if only other change and count does not change. This is inefficient
+    const total = useMemo(()=> expensiveCalculation(count), [count])
 }
 ```
