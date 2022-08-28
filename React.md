@@ -56,3 +56,33 @@ funtion workHard(){
    to use dynamically import the component.
    use `const Button = React.lazy(()=> import("./Button"))`
    while loading display a fallback component using `<Suspense> fallback={<div>Loading...</div>}`
+
+7. Props Drilling
+   Refers to passing props down components that do not need until it reaches the target child.
+   To fix this:
+
+   1. we can use redux but that is a heavy handed approach.
+   2. Use contextApi
+      You provide that prop once and all the children nested inside can access it.
+
+   ```javascript
+   function PropDrilling() {
+   	const [count] = useState(0);
+
+   	return (
+   		<CountContext.Provider value={count}>
+   			<child />
+   		</CountContext.Provider>
+   	);
+   }
+
+   function child(){
+    return <GrandChild>
+   }
+
+   function GrandChild(){
+    const count = useContext(CountContext)
+   }
+   ```
+
+   NB: Use sparingly because it makes it impossible to resuse the component unless that provider is a parent
