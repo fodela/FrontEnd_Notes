@@ -47,3 +47,6 @@ funtion workHard(){
         <ComponentTwo/>
     </>
    ```
+
+5. Messy Files
+   Follow the 'one component per file' rule
