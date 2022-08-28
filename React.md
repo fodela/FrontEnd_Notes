@@ -30,3 +30,20 @@ funtion workHard(){
     const total = useMemo(()=> expensiveCalculation(count), [count])
 }
 ```
+
+4. Pointless div
+   Use react Fragment or better yet the simpler syntax of and empty element
+
+   ```html
+   <React.Fragment>
+        <ComponentOne/>
+        <ComponentTwo/>
+    </React.Fragment>
+
+    <!-- OR -->
+
+   <>
+        <ComponentOne/>
+        <ComponentTwo/>
+    </>
+   ```
