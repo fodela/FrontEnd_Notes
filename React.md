@@ -97,3 +97,31 @@ funtion workHard(){
 ```
 
 Code is less explicit so do not overuse
+
+9. Try some curry
+
+```javascript
+// use
+const handleIt = (v:number)=>{
+    return (e.any)=> console.log(e,v)
+}
+return (
+    <div>
+    <input onChange={handleIt(1)} />
+    <input onChange={handleIt(2)} />
+    <input onChange={handleIt(3)} />
+    </div>
+)
+
+// instead of
+const handleIt = (e: any, v:number)=>{
+    console.log(e,v)
+}
+return (
+    div
+    <input onChange={(e) => handleIt(e, 1)} />
+    <input onChange={(e) => handleIt(e, 2)} />
+    <input onChange={(e) => handleIt(e, 3)} />
+
+)
+```
