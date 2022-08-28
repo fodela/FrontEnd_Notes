@@ -49,4 +49,10 @@ funtion workHard(){
    ```
 
 5. Messy Files
-   Follow the 'one component per file' rule
+   Follow the 'one component per file' rule. Each component could have it separate directory.
+
+6. Huge bundles
+   For big projects, there will be many js files hence large js bundles to be downloaded by the browser and slow initial page load
+   to use dynamically import the component.
+   use `const Button = React.lazy(()=> import("./Button"))`
+   while loading display a fallback component using `<Suspense> fallback={<div>Loading...</div>}`
