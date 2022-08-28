@@ -125,3 +125,6 @@ return (
 
 )
 ```
+
+10. Code smarter
+    Extract the logic into a custom hook
