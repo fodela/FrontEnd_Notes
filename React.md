@@ -19,15 +19,15 @@ const Parent = ()=>{
 ```
 
 3. Failure to Memoize
-   We can use useMemo() Hookd to remember a value and call a function if and only if the value has changed.
+   We can use useMemo() Hook to remember a value and call a function if and only if the value has changed.
 
 ```javascript
-funtion workHard(){
-    const [count, setCount] = useState(0);
-    const [other, setOther] = usestate(0);
+function workHard() {
+	const [count, setCount] = useState(0);
+	const [other, setOther] = usestate(0);
 
-    // const total = expensiveCalcutaion(count) --> in this the function will run again even if only other change and count does not change. This is inefficient
-    const total = useMemo(()=> expensiveCalculation(count), [count])
+	// const total = expensiveCalcutaion(count) --> in this the function will run again even if only other change and count does not change. This is inefficient
+	const total = useMemo(() => expensiveCalculation(count), [count]);
 }
 ```
 
