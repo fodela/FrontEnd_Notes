@@ -24,7 +24,7 @@ const Parent = ()=>{
 ```javascript
 function workHard() {
 	const [count, setCount] = useState(0);
-	const [other, setOther] = usestate(0);
+	const [other, setOther] = useState(0);
 
 	// const total = expensiveCalcutaion(count) --> in this the function will run again even if only other change and count does not change. This is inefficient
 	const total = useMemo(() => expensiveCalculation(count), [count]);
@@ -85,7 +85,7 @@ function workHard() {
    }
    ```
 
-   NB: Use sparingly because it makes it impossible to resuse the component unless that provider is a parent
+   NB: Use sparingly because it makes it impossible to reuse the component unless that provider is a parent
 
 8. Props Plowing (a made up term)
 
